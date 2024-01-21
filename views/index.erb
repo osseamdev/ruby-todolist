@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Todolist</title>
+</head>
+
+<body class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
+  <div class="container mt-16">
+    <div class="card bg-white text-gray-800">
+      <h1 class="text-3xl font-bold mb-6">Todolist</h1>
+      <form action="/add_task" method="post" class="mb-6 flex">
+        <input type="text" name="task" class="form-input" placeholder="Nova Tarefa" required>
+        <button type="submit" class="button ml-4">Adicionar</button>
+      </form>
+      <ul class="task-list">
+        <% tasks.each_with_index do |task, index| %>
+          <li class="task-item">
+            <%= task %>
+              <form action="/delete_task/<%= index %>" method="post">
+                <button type="submit">Excluir</button>
+              </form>
+          </li>
+          <% end %>
+      </ul>
+
+      <div class="mt-8 text-gray-600 text-center">
+        Feito com ❤️ por Osseam Guerra
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
