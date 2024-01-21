@@ -20,10 +20,17 @@
       <ul class="task-list">
         <% tasks.each_with_index do |task, index| %>
           <li class="task-item">
-            <%= task %>
-              <form action="/delete_task/<%= index %>" method="post">
-                <button type="submit">Excluir</button>
-              </form>
+            <div>
+              <span class="text-lg">
+                <%= task[:content] %>
+              </span>
+              <span class="text-xs text-gray-500 ml-2">
+                <%= format_angolan_date(task[:created_at]) %>
+              </span>
+            </div>
+            <form action="/delete_task/<%= index %>" method="post">
+              <button type="submit">Excluir</button>
+            </form>
           </li>
           <% end %>
       </ul>

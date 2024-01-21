@@ -9,9 +9,15 @@ get '/' do
   erb :index, locals: { tasks: tasks }
 end
 
+def format_angolan_date(date_string)
+  datetime = DateTime.parse(date_string)
+  datetime.strftime('%d/%m/%Y %H:%M:%S')
+end
+
 post '/add_task' do
-  task = params[:task]
-  tasks << task unless task.empty?
+  content = params[:task]
+  created_at = DateTime.now.strftime('%Y-%m-%d %H:%M:%S')
+  tasks << { content: content, created_at: created_at }
   redirect '/'
 end
 
