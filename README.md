@@ -1,6 +1,8 @@
 # REQUISITOS
 
-1. Install Ruby 3.3.0
+1. Baixe o projecto .zip clicando no botão acima **<code>**
+2. Abra o projecto no seu editor favorito
+3. Mas antes precisas ter instalado o Ruby na sua versão 3.3.0
 
  ## Executar
  
